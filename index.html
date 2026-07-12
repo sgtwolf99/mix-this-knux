@@ -113,7 +113,7 @@ nav::after {
 }
 .nav-links a .nav-index {
   font-family: var(--mono);
-  font-size: 0.58rem;
+  font-size: 0.72rem;
   color: var(--teal);
   letter-spacing: 0.3em;
   opacity: 0.6;
@@ -303,8 +303,8 @@ section { padding: 100px 56px; position: relative; z-index: 10; }
   background: var(--teal); box-shadow: 0 0 8px var(--teal-glow);
 }
 .sec-index {
-  font-family: var(--mono); font-size: 0.55rem; color: var(--teal);
-  letter-spacing: 0.2em; opacity: 0.6; margin-bottom: 2px;
+  font-family: var(--mono); font-size: 0.85rem; color: var(--teal);
+  letter-spacing: 0.2em; opacity: 0.7; margin-bottom: 4px;
 }
 .sec-title {
   font-family: var(--head); font-size: clamp(1.6rem, 4vw, 2.4rem);
@@ -642,7 +642,7 @@ footer::before {
   }
   .nav-links::-webkit-scrollbar { display: none; }
   .nav-links a { padding: 0 13px; font-size: 0.92rem; white-space: nowrap; }
-  .nav-links a .nav-index { font-size: 0.66rem; }
+  .nav-links a .nav-index { font-size: 0.8rem; }
   .hero-logo-img { width: 96vw; max-width: 96vw; height: auto; }
   .hero-tagline { font-size: 0.82rem; letter-spacing: 0.14em; }
   section { padding: 72px 20px; }
@@ -1234,6 +1234,29 @@ footer::before {
   .gear-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ═══ MOBILE: bigger text (touch devices) ═══ */
+@media (hover: none) {
+  /* PRICE */
+  .price-tier { font-size: 0.85rem; }
+  .price-tier-jp, .price-tier .price-tier-jp { font-size: 1.05rem; }
+  .price-unit { font-size: 0.9rem; }
+  .price-tax { font-size: 0.95rem; }
+  .price-features li { font-size: 0.95rem; }
+  .delivery-bar, .delivery-bar span { font-size: 0.85rem; }
+  /* GEAR */
+  .gear-cat-title { font-size: 1.15rem; }
+  .gear-cat-jp { font-size: 0.95rem; }
+  .gear-items li { font-size: 0.95rem; }
+  /* FAQ */
+  .faq-q { font-size: 1.05rem; }
+  .faq-q-text, .faq-q span { font-size: 1.05rem; }
+  .faq-a-inner { font-size: 1rem; }
+  /* SHOP */
+  .merch-name { font-size: 1.1rem; }
+  .merch-price { font-size: 1.05rem; }
+  .merch-btn { font-size: 0.85rem; }
+}
+
 /* ═══ MOBILE: disable janky motion ═══ */
 @media (max-width: 768px), (hover: none) {
   .grid-floor { display: none; }
@@ -1466,6 +1489,7 @@ footer::before {
       <div class="sec-index">// 03</div>
       <h2 class="sec-title">My <span>Work</span></h2>
     </div>
+    <span class="sec-desc">YouTube Playlist</span>
   </div>
   <div style="max-width:1100px; margin:0 auto;">
     <div style="position:relative; width:100%; aspect-ratio:16/9; border:1px solid var(--border); overflow:hidden;">
@@ -1672,12 +1696,16 @@ const sections = ['price','gear','mywork','mymusic','merch','youtube','faq'];
 const navLinks = document.querySelectorAll('.nav-links li');
 
 window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY + 80;
+  const probe = window.scrollY + window.innerHeight * 0.35;
   let current = '';
   sections.forEach(id => {
     const el = document.getElementById(id);
-    if (el && el.offsetTop <= scrollY) current = id;
+    if (el && el.offsetTop <= probe) current = id;
   });
+  // At (or near) the very bottom, always highlight the last section
+  if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+    current = sections[sections.length - 1];
+  }
   navLinks.forEach(li => {
     const a = li.querySelector('a');
     const href = a.getAttribute('href').replace('#','');
