@@ -113,7 +113,7 @@ nav::after {
 }
 .nav-links a .nav-index {
   font-family: var(--mono);
-  font-size: 0.45rem;
+  font-size: 0.58rem;
   color: var(--teal);
   letter-spacing: 0.3em;
   opacity: 0.6;
@@ -629,7 +629,8 @@ footer::before {
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1150px) {
   .price-grid { grid-template-columns: repeat(2, 1fr); }
-  .gear-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-logo-img { width: min(88vw, 860px); max-width: 88vw; height: auto; }
+  .hero-tagline { font-size: clamp(1.05rem, 2.4vw, 1.5rem); letter-spacing: 0.22em; }
 }
 @media (max-width: 768px) {
   nav { padding: 0 10px; }
@@ -640,8 +641,8 @@ footer::before {
     max-width: 100%;
   }
   .nav-links::-webkit-scrollbar { display: none; }
-  .nav-links a { padding: 0 13px; font-size: 0.82rem; white-space: nowrap; }
-  .nav-links a .nav-index { font-size: 0.55rem; }
+  .nav-links a { padding: 0 13px; font-size: 0.92rem; white-space: nowrap; }
+  .nav-links a .nav-index { font-size: 0.66rem; }
   .hero-logo-img { width: 96vw; max-width: 96vw; height: auto; }
   .hero-tagline { font-size: 0.82rem; letter-spacing: 0.14em; }
   section { padding: 72px 20px; }
@@ -1229,8 +1230,8 @@ footer::before {
   top: -1px;
 }
 .gear-cat:hover .gear-items li { color: #a8b6d4; }
-@media (max-width: 768px) {
-  .gear-grid { grid-template-columns: 1fr; }
+@media (max-width: 1150px) {
+  .gear-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ═══ MOBILE: disable janky motion ═══ */
@@ -1269,7 +1270,7 @@ footer::before {
     <li><a href="#mywork"><span class="nav-index">03</span>Work</a></li>
     <li><a href="#mymusic"><span class="nav-index">04</span>Music</a></li>
     <li><a href="#merch"><span class="nav-index">05</span>Shop</a></li>
-    <li><a href="#youtube"><span class="nav-index">06</span>YouTube</a></li>
+    <li><a href="#youtube"><span class="nav-index">06</span>Video</a></li>
     <li><a href="#faq"><span class="nav-index">07</span>FAQ</a></li>
   </ul>
   
