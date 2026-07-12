@@ -345,15 +345,7 @@ a.price-card { text-decoration: none; color: inherit; display: block; cursor: po
   background: var(--teal); box-shadow: 0 0 16px var(--teal-glow);
 }
 
-/* diagonal cut corner */
-.price-card::after {
-  content: ''; position: absolute; top: 0; right: 0;
-  width: 0; height: 0;
-  border-style: solid; border-width: 0 24px 24px 0;
-  border-color: transparent var(--border) transparent transparent;
-  transition: border-color 0.3s;
-}
-.price-card:hover::after { border-color: transparent var(--teal) transparent transparent; }
+
 
 .price-tier {
   font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.3em;
@@ -996,7 +988,7 @@ footer::before {
 
 
 /* HUD corner brackets on cards */
-.price-card .hud-corner,
+.price-card .hud-corner { display: none; }
 .merch-card .hud-corner,
 .yt-card .hud-corner {
   position: absolute;
@@ -1259,17 +1251,17 @@ footer::before {
   .price-grid { gap: 18px; }
   .gear-grid { gap: 18px; }
   .price-card { border: 1px solid var(--border); }
-  .price-tier { font-size: 1rem; }
-  .price-tier-jp, .price-tier .price-tier-jp { font-size: 1.2rem; }
-  .price-unit { font-size: 1.1rem; }
-  .price-tax { font-size: 1.05rem; }
-  .price-features li { font-size: 1.1rem; }
-  .delivery-bar, .delivery-bar span { font-size: 1rem; }
+  .price-tier { font-size: 1.15rem; }
+  .price-tier-jp, .price-tier .price-tier-jp { font-size: 1.35rem; }
+  .price-unit { font-size: 1.25rem; }
+  .price-tax { font-size: 1.2rem; }
+  .price-features li { font-size: 1.25rem; }
+  .delivery-bar, .delivery-bar span { font-size: 1.15rem; }
   /* GEAR */
   .gear-cat { border: 1px solid var(--border); }
-  .gear-cat-title { font-size: 1.4rem; }
-  .gear-cat-jp { font-size: 1.1rem; }
-  .gear-items li { font-size: 1.1rem; }
+  .gear-cat-title { font-size: 1.5rem; }
+  .gear-cat-jp { font-size: 1.2rem; }
+  .gear-items li { font-size: 1.25rem; }
   /* FAQ */
   .faq-q { font-size: 1.45rem; padding: 26px 30px; }
   .faq-q-text, .faq-q span { font-size: 1.45rem; }
@@ -1289,15 +1281,18 @@ footer::before {
 
 /* ═══ TOUCH DEVICES: bigger nav ═══ */
 @media (hover: none) {
+  .price-card::after { display: none; }
+  .price-card .hud-corner { display: none; }
+  .price-card:hover::before { background: transparent; box-shadow: none; }
   .merch-grid { grid-template-columns: repeat(2, 1fr); }
+  .price-grid { grid-template-columns: repeat(2, 1fr); }
+  .gear-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-logo-img { width: min(92vw, 900px); max-width: 92vw; height: auto; }
   .hero-tagline { font-size: clamp(1.1rem, 2.6vw, 1.6rem); }
   .music-embeds { grid-template-columns: 1fr; }
   .music-embed-label { font-size: 1.15rem; }
   .sec-index { font-size: 1.2rem; }
   .sec-desc { font-size: 1.25rem; }
-  .price-grid { grid-template-columns: 1fr; }
-  .gear-grid { grid-template-columns: 1fr; }
   .faq-q-text { font-size: 1.45rem; }
   .faq-a-inner { font-size: 1.3rem; }
   .nav-links {
@@ -1309,6 +1304,12 @@ footer::before {
   .nav-links::-webkit-scrollbar { display: none; }
   .nav-links a { padding: 0 16px; font-size: 1.3rem; white-space: nowrap; }
   .nav-links a .nav-index { font-size: 1.1rem; }
+}
+
+/* Narrow screens (proper mobile viewport): 1 column */
+@media (hover: none) and (max-width: 768px) {
+  .price-grid { grid-template-columns: 1fr; }
+  .gear-grid { grid-template-columns: 1fr; }
 }
 
 /* ═══ MOBILE: disable janky motion ═══ */
