@@ -633,12 +633,42 @@ footer::before {
     max-width: 100%;
   }
   .nav-links::-webkit-scrollbar { display: none; }
-  .nav-links a { padding: 0 16px; font-size: 1.3rem; white-space: nowrap; }
-  .nav-links a .nav-index { font-size: 1.1rem; }
-  .hero-logo-img { width: 96vw; max-width: 96vw; height: auto; }
-  .hero-tagline { font-size: 0.82rem; letter-spacing: 0.14em; }
-  section { padding: 72px 20px; }
-  .price-grid, .work-grid, .yt-grid { grid-template-columns: 1fr; }
+  .nav-links a { padding: 0 7px; font-size: 0.58rem; white-space: nowrap; gap: 3px; }
+  .nav-links a .nav-index { font-size: 0.48rem; }
+  .hero-logo-img { width: 92vw; max-width: 92vw; height: auto; }
+  .hero-tagline { font-size: 0.68rem; letter-spacing: 0.12em; gap: 10px; }
+  section { padding: 52px 14px; }
+  .sec-title { font-size: 1.5rem; }
+  .sec-header { margin-bottom: 32px; padding-bottom: 14px; }
+  /* delivery bar: one horizontal line, compact */
+  .delivery-bar { gap: 10px; padding: 10px 12px; margin-bottom: 20px; }
+  .delivery-bar-item { font-size: 0.52rem; letter-spacing: 0.06em; gap: 5px; white-space: nowrap; flex-shrink: 0; }
+  .delivery-bar-item span { font-size: 0.56rem; }
+  /* price: match Gear card look */
+  .price-card { padding: 36px 32px; }
+  .price-tier { font-size: 0.58rem; margin-bottom: 16px; letter-spacing: 0.25em; }
+  .price-tier-jp { font-size: 0.85rem; }
+  .price-amount { font-size: 1.7rem; }
+  .price-cur { font-size: 0.8rem; margin-top: 5px; }
+  .price-unit { font-size: 0.7rem; margin-top: 6px; }
+  .price-tax { font-size: 0.68rem; }
+  .price-features li { font-size: 0.72rem; gap: 8px; }
+  .price-sep { margin: 18px 0; }
+  /* shop / faq / music compact */
+  .merch-name { font-size: 0.7rem; }
+  .merch-price { font-size: 0.66rem; }
+  .merch-btn { font-size: 0.58rem; padding: 8px; }
+  .faq-q { padding: 14px 14px; gap: 10px; }
+  .faq-q-text { font-size: 0.78rem; gap: 10px; }
+  .faq-toggle { font-size: 1.1rem; }
+  .faq-a-inner { font-size: 0.74rem; padding: 0 14px 16px 14px; gap: 10px; line-height: 1.8; }
+  .faq-q-text::before, .faq-a-inner::before { width: 18px; height: 18px; font-size: 0.58rem; }
+  .music-embed-label { font-size: 0.62rem; }
+  .sec-index { font-size: 0.65rem; }
+  .sec-desc { font-size: 0.62rem; }
+  .btn-outline { font-size: 0.68rem; padding: 10px 22px; }
+  .price-grid { grid-template-columns: 1fr; gap: 12px; }
+  .work-grid, .yt-grid { grid-template-columns: 1fr; }
   .merch-grid { grid-template-columns: repeat(2,1fr); }
   .yt-featured { grid-row: auto; }
   .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
@@ -722,6 +752,18 @@ footer::before {
 .delivery-bar-item span {
   color: var(--teal);
   font-size: 0.75rem;
+}
+@media (max-width: 768px) {
+  .delivery-bar { gap: 8px; padding: 10px 12px; }
+  .delivery-bar-item {
+    font-size: 0.55rem;
+    letter-spacing: 0.05em;
+    gap: 5px;
+    white-space: nowrap;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+  .delivery-bar-item span { font-size: 0.6rem; }
 }
 .delivery-bar-divider {
   width: 1px; height: 20px;
@@ -988,7 +1030,7 @@ footer::before {
 
 
 /* HUD corner brackets on cards */
-.price-card .hud-corner { display: none; }
+.price-card .hud-corner,
 .merch-card .hud-corner,
 .yt-card .hud-corner {
   position: absolute;
@@ -1244,9 +1286,12 @@ footer::before {
 @media (max-width: 1150px) {
   .gear-grid { grid-template-columns: repeat(2, 1fr); }
 }
+@media (max-width: 768px) {
+  .gear-grid { grid-template-columns: 1fr; gap: 12px; }
+}
 
-/* ═══ MOBILE: bigger text (touch devices) ═══ */
-@media (hover: none) {
+/* ═══ WIDE TOUCH (Chrome PC-mode etc.): bigger text ═══ */
+@media (hover: none) and (min-width: 769px) {
   /* PRICE */
   .price-grid { gap: 18px; }
   .gear-grid { gap: 18px; }
@@ -1279,12 +1324,22 @@ footer::before {
   .merch-btn { font-size: 1.1rem; }
 }
 
-/* ═══ TOUCH DEVICES: bigger nav ═══ */
+/* ═══ ALL TOUCH DEVICES: no hover decorations, scrollable nav ═══ */
 @media (hover: none) {
-  .price-card::after { display: none; }
-  .price-card .hud-corner { display: none; }
-  .price-card:hover::before { background: transparent; box-shadow: none; }
+  .price-card::after, .gear-cat::after { display: none !important; }
   .merch-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-links {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    max-width: 100%;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { white-space: nowrap; }
+}
+
+/* ═══ WIDE TOUCH ONLY (Chrome PC-mode): 2col + big text ═══ */
+@media (hover: none) and (min-width: 769px) {
   .price-grid { grid-template-columns: repeat(2, 1fr); }
   .gear-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-logo-img { width: min(92vw, 900px); max-width: 92vw; height: auto; }
@@ -1295,21 +1350,8 @@ footer::before {
   .sec-desc { font-size: 1.25rem; }
   .faq-q-text { font-size: 1.45rem; }
   .faq-a-inner { font-size: 1.3rem; }
-  .nav-links {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    max-width: 100%;
-  }
-  .nav-links::-webkit-scrollbar { display: none; }
-  .nav-links a { padding: 0 16px; font-size: 1.3rem; white-space: nowrap; }
+  .nav-links a { padding: 0 16px; font-size: 1.3rem; }
   .nav-links a .nav-index { font-size: 1.1rem; }
-}
-
-/* Narrow screens (proper mobile viewport): 1 column */
-@media (hover: none) and (max-width: 768px) {
-  .price-grid { grid-template-columns: 1fr; }
-  .gear-grid { grid-template-columns: 1fr; }
 }
 
 /* ═══ MOBILE: disable janky motion ═══ */
