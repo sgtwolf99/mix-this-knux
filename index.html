@@ -323,7 +323,7 @@ section { padding: 100px 56px; position: relative; z-index: 10; }
 #price { background: var(--bg); }
 
 .price-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
   background: var(--bg); max-width: 1100px;
   margin-left: auto; margin-right: auto;
   clip-path: polygon(16px 0%, 100% 0%, calc(100% - 16px) 100%, 0% 100%);
@@ -588,9 +588,9 @@ a.price-card { text-decoration: none; color: inherit; display: block; cursor: po
   display: flex; justify-content: flex-end;
 }
 .btn-outline {
-  font-family: var(--mono); font-size: 0.95rem; letter-spacing: 0.22em;
+  font-family: var(--mono); font-size: 1.25rem; letter-spacing: 0.22em;
   text-transform: uppercase; color: var(--teal); text-decoration: none;
-  padding: 15px 38px; border: 1px solid var(--teal);
+  padding: 18px 46px; border: 1px solid var(--teal);
   clip-path: polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
   transition: all 0.25s;
 }
@@ -641,8 +641,8 @@ footer::before {
     max-width: 100%;
   }
   .nav-links::-webkit-scrollbar { display: none; }
-  .nav-links a { padding: 0 14px; font-size: 1.05rem; white-space: nowrap; }
-  .nav-links a .nav-index { font-size: 0.9rem; }
+  .nav-links a { padding: 0 16px; font-size: 1.3rem; white-space: nowrap; }
+  .nav-links a .nav-index { font-size: 1.1rem; }
   .hero-logo-img { width: 96vw; max-width: 96vw; height: auto; }
   .hero-tagline { font-size: 0.82rem; letter-spacing: 0.14em; }
   section { padding: 72px 20px; }
@@ -1181,7 +1181,7 @@ footer::before {
 .gear-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
+  gap: 14px;
   background: var(--bg);
   max-width: 1100px;
   margin-left: auto; margin-right: auto;
@@ -1271,13 +1271,15 @@ footer::before {
   .gear-cat-jp { font-size: 1.1rem; }
   .gear-items li { font-size: 1.1rem; }
   /* FAQ */
-  .faq-q { font-size: 1.05rem; }
-  .faq-q-text, .faq-q span { font-size: 1.05rem; }
-  .faq-a-inner { font-size: 1rem; }
+  .faq-q { font-size: 1.45rem; padding: 26px 30px; }
+  .faq-q-text, .faq-q span { font-size: 1.45rem; }
+  .faq-toggle { font-size: 1.6rem; }
+  .faq-a-inner { font-size: 1.3rem; line-height: 2; padding-bottom: 30px; }
+  .faq-item.open .faq-a { max-height: 600px; }
   .faq-q-text::before,
   .faq-a-inner::before {
-    font-size: 1rem;
-    width: 32px; height: 32px;
+    font-size: 1.2rem;
+    width: 40px; height: 40px;
   }
   /* SHOP */
   .merch-name { font-size: 1.2rem; }
@@ -1290,8 +1292,8 @@ footer::before {
   .merch-grid { grid-template-columns: repeat(2, 1fr); }
   .price-grid { grid-template-columns: 1fr; }
   .gear-grid { grid-template-columns: 1fr; }
-  .faq-q-text { font-size: 1.18rem; }
-  .faq-a-inner { font-size: 1.05rem; }
+  .faq-q-text { font-size: 1.45rem; }
+  .faq-a-inner { font-size: 1.3rem; }
   .nav-links {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -1299,8 +1301,8 @@ footer::before {
     max-width: 100%;
   }
   .nav-links::-webkit-scrollbar { display: none; }
-  .nav-links a { padding: 0 14px; font-size: 1.05rem; white-space: nowrap; }
-  .nav-links a .nav-index { font-size: 0.9rem; }
+  .nav-links a { padding: 0 16px; font-size: 1.3rem; white-space: nowrap; }
+  .nav-links a .nav-index { font-size: 1.1rem; }
 }
 
 /* ═══ MOBILE: disable janky motion ═══ */
