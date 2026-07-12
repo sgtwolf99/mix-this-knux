@@ -313,7 +313,7 @@ section { padding: 100px 56px; position: relative; z-index: 10; }
 }
 .sec-title span { color: var(--teal); }
 .sec-desc {
-  font-family: var(--mono); font-size: 0.62rem; color: var(--mid);
+  font-family: var(--mono); font-size: 0.9rem; color: var(--mid);
   letter-spacing: 0.15em; margin-left: auto;
   align-self: center;
   text-transform: uppercase;
@@ -372,8 +372,8 @@ a.price-card { text-decoration: none; color: inherit; display: block; cursor: po
 }
 .price-cur { font-size: 1rem; font-weight: 400; vertical-align: top; margin-top: 10px; display: inline-block; }
 .price-unit {
-  font-family: var(--mono); font-size: 0.58rem; color: var(--mid);
-  letter-spacing: 0.18em; margin-top: 6px;
+  font-family: var(--mono); font-size: 0.85rem; color: #8fa0c2;
+  letter-spacing: 0.18em; margin-top: 8px;
 }
 
 .price-sep {
@@ -495,13 +495,13 @@ a.price-card { text-decoration: none; color: inherit; display: block; cursor: po
   margin-bottom: 5px;
 }
 .merch-price {
-  font-family: var(--mono); font-size: 0.75rem; color: var(--mid);
+  font-family: var(--mono); font-size: 1rem; color: var(--mid);
 }
 
 .merch-btn {
-  display: block; width: 100%; padding: 11px;
+  display: block; width: 100%; padding: 12px;
   background: transparent; color: var(--mid);
-  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em;
+  font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.2em;
   text-transform: uppercase; text-align: center;
   border: none; border-top: 1px solid var(--border);
   cursor: pointer; transition: all 0.25s;
@@ -641,8 +641,8 @@ footer::before {
     max-width: 100%;
   }
   .nav-links::-webkit-scrollbar { display: none; }
-  .nav-links a { padding: 0 13px; font-size: 0.92rem; white-space: nowrap; }
-  .nav-links a .nav-index { font-size: 0.8rem; }
+  .nav-links a { padding: 0 14px; font-size: 1.05rem; white-space: nowrap; }
+  .nav-links a .nav-index { font-size: 0.9rem; }
   .hero-logo-img { width: 96vw; max-width: 96vw; height: auto; }
   .hero-tagline { font-size: 0.82rem; letter-spacing: 0.14em; }
   section { padding: 72px 20px; }
@@ -711,7 +711,7 @@ footer::before {
 }
 .delivery-bar-item {
   font-family: var(--mono);
-  font-size: 0.65rem;
+  font-size: 0.9rem;
   letter-spacing: 0.18em;
   color: var(--mid);
   display: flex;
@@ -1239,7 +1239,7 @@ footer::before {
   /* PRICE */
   .price-tier { font-size: 0.85rem; }
   .price-tier-jp, .price-tier .price-tier-jp { font-size: 1.05rem; }
-  .price-unit { font-size: 0.9rem; }
+  .price-unit { font-size: 1rem; }
   .price-tax { font-size: 0.95rem; }
   .price-features li { font-size: 0.95rem; }
   .delivery-bar, .delivery-bar span { font-size: 0.85rem; }
@@ -1253,8 +1253,26 @@ footer::before {
   .faq-a-inner { font-size: 1rem; }
   /* SHOP */
   .merch-name { font-size: 1.1rem; }
-  .merch-price { font-size: 1.05rem; }
-  .merch-btn { font-size: 0.85rem; }
+  .merch-price { font-size: 1.15rem; }
+  .merch-btn { font-size: 1rem; }
+}
+
+/* ═══ TOUCH DEVICES: bigger nav ═══ */
+@media (hover: none) {
+  .merch-grid { grid-template-columns: repeat(2, 1fr); }
+  .price-grid { grid-template-columns: 1fr; }
+  .gear-grid { grid-template-columns: 1fr; }
+  .faq-q-text { font-size: 1.18rem; }
+  .faq-a-inner { font-size: 1.05rem; }
+  .nav-links {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    max-width: 100%;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { padding: 0 14px; font-size: 1.05rem; white-space: nowrap; }
+  .nav-links a .nav-index { font-size: 0.9rem; }
 }
 
 /* ═══ MOBILE: disable janky motion ═══ */
@@ -1487,7 +1505,7 @@ footer::before {
   <div class="sec-header reveal">
     <div>
       <div class="sec-index">// 03</div>
-      <h2 class="sec-title">My <span>Work</span></h2>
+      <h2 class="sec-title">My <span>Work</span>.</h2>
     </div>
     <span class="sec-desc">YouTube Playlist</span>
   </div>
@@ -1509,7 +1527,7 @@ footer::before {
   <div class="sec-header reveal">
     <div>
       <div class="sec-index">// 04</div>
-      <h2 class="sec-title">My <span>Music</span></h2>
+      <h2 class="sec-title">My <span>Music</span>.</h2>
     </div>
   </div>
   <div class="music-embeds reveal reveal-delay-1">
@@ -1569,7 +1587,7 @@ footer::before {
   <div class="sec-header reveal">
     <div>
       <div class="sec-index">// 06</div>
-      <h2 class="sec-title">You<span>Tube</span></h2>
+      <h2 class="sec-title">You<span>Tube</span>.</h2>
     </div>
     <span class="sec-desc">チャンネルを見る</span>
   </div>
