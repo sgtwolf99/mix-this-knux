@@ -303,17 +303,17 @@ section { padding: 100px 56px; position: relative; z-index: 10; }
   background: var(--teal); box-shadow: 0 0 8px var(--teal-glow);
 }
 .sec-index {
-  font-family: var(--mono); font-size: 0.85rem; color: var(--teal);
-  letter-spacing: 0.2em; opacity: 0.7; margin-bottom: 4px;
+  font-family: var(--mono); font-size: 1.05rem; color: var(--teal);
+  letter-spacing: 0.2em; opacity: 0.75; margin-bottom: 5px;
 }
 .sec-title {
-  font-family: var(--head); font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-family: var(--head); font-size: clamp(2rem, 5vw, 2.9rem);
   font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--white); line-height: 1;
 }
 .sec-title span { color: var(--teal); }
 .sec-desc {
-  font-family: var(--mono); font-size: 0.9rem; color: var(--mid);
+  font-family: var(--mono); font-size: 1.1rem; color: #8fa0c2;
   letter-spacing: 0.15em; margin-left: auto;
   align-self: center;
   text-transform: uppercase;
@@ -495,13 +495,13 @@ a.price-card { text-decoration: none; color: inherit; display: block; cursor: po
   margin-bottom: 5px;
 }
 .merch-price {
-  font-family: var(--mono); font-size: 1rem; color: var(--mid);
+  font-family: var(--mono); font-size: 1.2rem; color: #8fa0c2;
 }
 
 .merch-btn {
   display: block; width: 100%; padding: 12px;
   background: transparent; color: var(--mid);
-  font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.2em;
+  font-family: var(--mono); font-size: 1rem; letter-spacing: 0.2em;
   text-transform: uppercase; text-align: center;
   border: none; border-top: 1px solid var(--border);
   cursor: pointer; transition: all 0.25s;
@@ -588,9 +588,9 @@ a.price-card { text-decoration: none; color: inherit; display: block; cursor: po
   display: flex; justify-content: flex-end;
 }
 .btn-outline {
-  font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.22em;
+  font-family: var(--mono); font-size: 0.95rem; letter-spacing: 0.22em;
   text-transform: uppercase; color: var(--teal); text-decoration: none;
-  padding: 12px 30px; border: 1px solid var(--teal);
+  padding: 15px 38px; border: 1px solid var(--teal);
   clip-path: polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
   transition: all 0.25s;
 }
@@ -808,7 +808,7 @@ footer::before {
 .music-embed-label .no-upper { text-transform: none; color: var(--white); text-shadow: none; }
 .music-embed-label {
   font-family: var(--mono);
-  font-size: 0.6rem;
+  font-size: 0.95rem;
   letter-spacing: 0.28em;
   color: var(--teal);
   text-transform: uppercase;
@@ -1125,13 +1125,32 @@ footer::before {
   transition: max-height 0.35s ease;
 }
 .faq-a-inner {
-  padding: 0 28px 24px 66px;
+  padding: 0 28px 24px 28px;
   font-family: var(--body);
   font-size: 0.88rem;
   color: var(--white);
   line-height: 1.9;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
 }
-.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner::before {
+  content: 'A';
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--white);
+  background: var(--teal);
+  border: 1px solid var(--teal);
+  color: var(--black);
+  width: 24px; height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px var(--teal-glow);
+  margin-top: 2px;
+}
+.faq-item.open .faq-a { max-height: 400px; }
 
 /* ═══ Footer socials ═══ */
 .footer-socials {
@@ -1237,24 +1256,33 @@ footer::before {
 /* ═══ MOBILE: bigger text (touch devices) ═══ */
 @media (hover: none) {
   /* PRICE */
-  .price-tier { font-size: 0.85rem; }
-  .price-tier-jp, .price-tier .price-tier-jp { font-size: 1.05rem; }
-  .price-unit { font-size: 1rem; }
-  .price-tax { font-size: 0.95rem; }
-  .price-features li { font-size: 0.95rem; }
-  .delivery-bar, .delivery-bar span { font-size: 0.85rem; }
+  .price-grid { gap: 18px; }
+  .gear-grid { gap: 18px; }
+  .price-card { border: 1px solid var(--border); }
+  .price-tier { font-size: 1rem; }
+  .price-tier-jp, .price-tier .price-tier-jp { font-size: 1.2rem; }
+  .price-unit { font-size: 1.1rem; }
+  .price-tax { font-size: 1.05rem; }
+  .price-features li { font-size: 1.1rem; }
+  .delivery-bar, .delivery-bar span { font-size: 1rem; }
   /* GEAR */
-  .gear-cat-title { font-size: 1.15rem; }
-  .gear-cat-jp { font-size: 0.95rem; }
-  .gear-items li { font-size: 0.95rem; }
+  .gear-cat { border: 1px solid var(--border); }
+  .gear-cat-title { font-size: 1.4rem; }
+  .gear-cat-jp { font-size: 1.1rem; }
+  .gear-items li { font-size: 1.1rem; }
   /* FAQ */
   .faq-q { font-size: 1.05rem; }
   .faq-q-text, .faq-q span { font-size: 1.05rem; }
   .faq-a-inner { font-size: 1rem; }
+  .faq-q-text::before,
+  .faq-a-inner::before {
+    font-size: 1rem;
+    width: 32px; height: 32px;
+  }
   /* SHOP */
-  .merch-name { font-size: 1.1rem; }
-  .merch-price { font-size: 1.15rem; }
-  .merch-btn { font-size: 1rem; }
+  .merch-name { font-size: 1.2rem; }
+  .merch-price { font-size: 1.3rem; }
+  .merch-btn { font-size: 1.1rem; }
 }
 
 /* ═══ TOUCH DEVICES: bigger nav ═══ */
