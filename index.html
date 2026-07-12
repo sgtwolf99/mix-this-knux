@@ -1201,6 +1201,16 @@ footer::before {
   .gear-grid { grid-template-columns: 1fr; }
 }
 
+/* ═══ MOBILE: disable janky motion ═══ */
+@media (max-width: 768px), (hover: none) {
+  .grid-floor { display: none; }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 .gear-cat-jp {
   display: block;
   font-family: var(--body);
@@ -1224,8 +1234,8 @@ footer::before {
   <ul class="nav-links" id="nav-links">
     <li><a href="#price"><span class="nav-index">01</span>Price</a></li>
     <li><a href="#gear"><span class="nav-index">02</span>Gear</a></li>
-    <li><a href="#mywork"><span class="nav-index">03</span>My Work</a></li>
-    <li><a href="#mymusic"><span class="nav-index">04</span>My Music</a></li>
+    <li><a href="#mywork"><span class="nav-index">03</span>Work</a></li>
+    <li><a href="#mymusic"><span class="nav-index">04</span>Music</a></li>
     <li><a href="#merch"><span class="nav-index">05</span>Shop</a></li>
     <li><a href="#youtube"><span class="nav-index">06</span>YouTube</a></li>
     <li><a href="#faq"><span class="nav-index">07</span>FAQ</a></li>
